@@ -1,18 +1,34 @@
-## Getting Started
+## Marketplace Profit Calculator
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Aplicativo desktop em Java/Swing que compara o lucro estimado de uma venda em Shopee, TikTok Shop, Mercado Livre e Amazon.
 
-## Folder Structure
+O programa recebe o preco de venda, o custo do produto e a comissao de afiliado do TikTok. Ele tambem permite marcar a opcao `CPF (+R$ 3,00)`, usada nos calculos da Shopee e do Mercado Livre. A interface exibe taxas, repasse liquido, lucro bruto e margem bruta para cada plataforma, além de indicar a melhor opcao.
 
-The workspace contains two folders by default, where:
+## Requisitos
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- JDK com os comandos `javac` e `java`
+- Ambiente desktop com suporte a uma interface grafica Java (Swing)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Nao ha dependencias externas ou sistema de build configurado neste repositorio.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Executar
 
-## Dependency Management
+Na raiz do repositorio, compile e execute:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```bash
+javac -d bin src/Calculadora.java
+java -cp bin Calculadora
+```
+
+No VS Code, tambem e possivel abrir `src/Calculadora.java` e executar o metodo `main` com uma extensao Java instalada.
+
+## Uso
+
+Preencha `Preco de venda (R$)`, `Seu custo do produto (R$)` e `Comissao afiliado TikTok (%)`. Use ponto ou virgula como separador decimal. Clique em `CALCULAR` para atualizar os quatro cards.
+
+Campos vazios ou valores invalidos exibem uma mensagem de erro.
+
+## Estrutura do projeto
+
+- `src/Calculadora.java`: codigo-fonte da interface e dos calculos
+- `bin/` e `out/`: diretorios que podem conter os arquivos `.class` gerados localmente
